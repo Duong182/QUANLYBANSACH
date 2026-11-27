@@ -169,7 +169,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Database\QuanLyNhaSach.sql" />
-    <Content Include="Database\Nguoi3_KhachHang_NhanVien.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
