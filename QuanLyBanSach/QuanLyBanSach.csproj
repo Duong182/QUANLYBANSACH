@@ -230,11 +230,11 @@
     <Compile Include="Forms\QuanLySach\frmLinhVuc.Designer.cs">
       <DependentUpon>frmLinhVuc.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\QuanLySach\frmLoaiSach.cs">
+    <Compile Include="Forms\QuanLySach\frmDanhMucSach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\QuanLySach\frmLoaiSach.Designer.cs">
-      <DependentUpon>frmLoaiSach.cs</DependentUpon>
+    <Compile Include="Forms\QuanLySach\frmTheLoai.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\QuanLySach\frmNhaXuatBan.cs">
       <SubType>Form</SubType>
@@ -251,9 +251,7 @@
     <Compile Include="Forms\QuanLySach\frmTacGia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\QuanLySach\frmTacGia.Designer.cs">
-      <DependentUpon>frmTacGia.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Forms\QuanLySach\GiaoDienQuanLySach.cs" />
     <Compile Include="Forms\TaiKhoan\frmDangKy.cs">
       <SubType>Form</SubType>
     </Compile>

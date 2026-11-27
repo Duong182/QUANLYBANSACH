@@ -1,10 +1,10 @@
 ﻿using QuanLyBanSach.Forms.ThongKe;
 using QuanLyNhaSach;
+using QuanLyBanSach.Forms.QuanLySach;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -19,17 +19,16 @@ namespace QuanLyBanSach.GUI.TrangChu
         public frmMain()
         {
             InitializeComponent();
-            this.Load += frmMain_Load;
-            this.KeyDown += frmMain_KeyDown;
 
+            mnuSach.Click += mnuSach_Click;
+            mnuLoaiSach.Click += (sender, e) => MoDanhMucSach(new frmTheLoai());
+            mnuTacGia.Click += (sender, e) => MoDanhMucSach(new frmTacGia());
             mnuThongKe.Click += mnuThongKe_Click;
             mnuThoat.Click += mnuThoat_Click;
 
             this.KeyPreview = true;
-
-            dgvSach.BringToFront();
-            menuMain.SendToBack();
         }
+
         private void frmMain_Load(
            object sender, EventArgs e)
         {
@@ -60,29 +59,6 @@ namespace QuanLyBanSach.GUI.TrangChu
 
             dgvSach.AutoSizeColumnsMode =
                 DataGridViewAutoSizeColumnsMode.Fill;
-
-            dgvSach.BackgroundColor = Color.White;
-
-            dgvSach.EnableHeadersVisualStyles = false;
-
-            dgvSach.ColumnHeadersDefaultCellStyle.BackColor =
-                Color.FromArgb(230, 235, 242);
-
-            dgvSach.ColumnHeadersDefaultCellStyle.ForeColor =
-                Color.Black;
-
-            dgvSach.ColumnHeadersDefaultCellStyle.Font =
-                new Font("Segoe UI", 10, FontStyle.Bold);
-
-            dgvSach.DefaultCellStyle.Font =
-                new Font("Segoe UI", 10);
-
-            dgvSach.AlternatingRowsDefaultCellStyle.BackColor =
-                Color.AliceBlue;
-
-            dgvSach.RowTemplate.Height = 32;
-
-            dgvSach.ColumnHeadersHeight = 35;
         }
 
         private void TaiDuLieu()
@@ -258,6 +234,26 @@ namespace QuanLyBanSach.GUI.TrangChu
                 e.Handled = true;
             }
         }
+        private void mnuSach_Click(object sender, EventArgs e)
+        {
+            using (frmSach form = new frmSach())
+            {
+                form.ShowDialog(this);
+                if (form.DaThayDoi)
+                    TaiDuLieu();
+            }
+        }
+
+        private void MoDanhMucSach(frmDanhMucSach form)
+        {
+            using (form)
+            {
+                form.ShowDialog(this);
+                if (form.DaThayDoi)
+                    TaiDuLieu();
+            }
+        }
+
         private void mnuThongKe_Click(object sender, EventArgs e)
         {
             using (frmThongKe f = new frmThongKe())

@@ -49,57 +49,60 @@
             // lblTieuDe
             // 
             this.lblTieuDe.AutoSize = true;
-            this.lblTieuDe.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTieuDe.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.lblTieuDe.Location = new System.Drawing.Point(210, 9);
+            this.lblTieuDe.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Bold);
+            this.lblTieuDe.Location = new System.Drawing.Point(46, 35);
             this.lblTieuDe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTieuDe.Name = "lblTieuDe";
             this.lblTieuDe.Size = new System.Drawing.Size(135, 30);
             this.lblTieuDe.TabIndex = 0;
-            this.lblTieuDe.Text = "ĐĂNG NHẬP";
+            this.lblTieuDe.Text = "Đăng nhập";
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(36, 63);
+            this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.lblUsername.Location = new System.Drawing.Point(48, 102);
             this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(113, 17);
             this.lblUsername.TabIndex = 1;
-            this.lblUsername.Text = "TÊN ĐĂNG NHẬP:";
+            this.lblUsername.Text = "Tên đăng nhập";
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(36, 128);
+            this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.lblPassword.Location = new System.Drawing.Point(48, 168);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(76, 17);
             this.lblPassword.TabIndex = 2;
-            this.lblPassword.Text = "MẬT KHẨU:";
+            this.lblPassword.Text = "Mật khẩu";
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(191, 60);
+            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular);
+            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUsername.Location = new System.Drawing.Point(48, 126);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(318, 25);
+            this.txtUsername.Size = new System.Drawing.Size(360, 27);
             this.txtUsername.TabIndex = 3;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(191, 128);
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 10.5F, System.Drawing.FontStyle.Regular);
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPassword.Location = new System.Drawing.Point(48, 192);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(318, 25);
+            this.txtPassword.Size = new System.Drawing.Size(360, 27);
             this.txtPassword.TabIndex = 4;
             // 
             // chkHienMatKhau
             // 
             this.chkHienMatKhau.AutoSize = true;
-            this.chkHienMatKhau.Location = new System.Drawing.Point(191, 160);
+            this.chkHienMatKhau.Location = new System.Drawing.Point(47, 230);
             this.chkHienMatKhau.Name = "chkHienMatKhau";
             this.chkHienMatKhau.Size = new System.Drawing.Size(110, 21);
             this.chkHienMatKhau.TabIndex = 5;
@@ -108,27 +111,30 @@
             // 
             // btnDangNhap
             // 
-            this.btnDangNhap.Location = new System.Drawing.Point(325, 203);
+            this.btnDangNhap.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnDangNhap.Location = new System.Drawing.Point(48, 310);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(103, 30);
+            this.btnDangNhap.Size = new System.Drawing.Size(270, 42);
             this.btnDangNhap.TabIndex = 6;
-            this.btnDangNhap.Text = "ĐĂNG NHẬP";
+            this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.UseVisualStyleBackColor = true;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click_1);
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(434, 203);
+            this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnThoat.Location = new System.Drawing.Point(330, 310);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(75, 30);
+            this.btnThoat.Size = new System.Drawing.Size(78, 42);
             this.btnThoat.TabIndex = 7;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
             // 
             // lblThongBao
             // 
+            this.lblThongBao.MaximumSize = new System.Drawing.Size(360, 0);
             this.lblThongBao.AutoSize = true;
-            this.lblThongBao.Location = new System.Drawing.Point(342, 161);
+            this.lblThongBao.Location = new System.Drawing.Point(48, 258);
             this.lblThongBao.Name = "lblThongBao";
             this.lblThongBao.Size = new System.Drawing.Size(0, 17);
             this.lblThongBao.TabIndex = 8;
@@ -137,8 +143,7 @@
             // lblDemNguoc
             // 
             this.lblDemNguoc.AutoSize = true;
-            this.lblDemNguoc.ForeColor = System.Drawing.Color.Red;
-            this.lblDemNguoc.Location = new System.Drawing.Point(342, 185);
+            this.lblDemNguoc.Location = new System.Drawing.Point(48, 279);
             this.lblDemNguoc.Name = "lblDemNguoc";
             this.lblDemNguoc.Size = new System.Drawing.Size(0, 17);
             this.lblDemNguoc.TabIndex = 9;
@@ -146,7 +151,7 @@
             // lblChuaCoTK
             // 
             this.lblChuaCoTK.AutoSize = true;
-            this.lblChuaCoTK.Location = new System.Drawing.Point(175, 246);
+            this.lblChuaCoTK.Location = new System.Drawing.Point(48, 373);
             this.lblChuaCoTK.Name = "lblChuaCoTK";
             this.lblChuaCoTK.Size = new System.Drawing.Size(119, 17);
             this.lblChuaCoTK.TabIndex = 10;
@@ -155,12 +160,12 @@
             // lnkDangKy
             // 
             this.lnkDangKy.AutoSize = true;
-            this.lnkDangKy.Location = new System.Drawing.Point(300, 246);
+            this.lnkDangKy.Location = new System.Drawing.Point(176, 373);
             this.lnkDangKy.Name = "lnkDangKy";
             this.lnkDangKy.Size = new System.Drawing.Size(109, 17);
             this.lnkDangKy.TabIndex = 11;
             this.lnkDangKy.TabStop = true;
-            this.lnkDangKy.Text = "Đăng kí tài khoản";
+            this.lnkDangKy.Text = "Đăng ký tài khoản";
             // 
             // err
             // 
@@ -173,9 +178,12 @@
             // 
             // frmDangNhap
             // 
+            this.Padding = new System.Windows.Forms.Padding(0);
+            this.MaximizeBox = false;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(576, 272);
+            this.ClientSize = new System.Drawing.Size(456, 418);
             this.Controls.Add(this.lnkDangKy);
             this.Controls.Add(this.lblChuaCoTK);
             this.Controls.Add(this.lblDemNguoc);
@@ -192,7 +200,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ĐĂNG NHẬP";
+            this.Text = "Quản lý nhà sách";
             this.Load += new System.EventHandler(this.frmDangNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
             this.ResumeLayout(false);
@@ -218,4 +226,3 @@
         private System.Windows.Forms.Timer tmrKhoa;
     }
 }
-

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -33,9 +32,8 @@ namespace QuanLyBanSach.Forms.ThongKe
             dtpDenNgay.ValueChanged += NgayLoc_ValueChanged;
 
             this.AcceptButton = btnTimKiem;
-
-            dgvThongKe.BringToFront();
         }
+
         private void frmThongKe_Load(
            object sender, EventArgs e)
         {
@@ -72,25 +70,6 @@ namespace QuanLyBanSach.Forms.ThongKe
 
             dgvThongKe.AutoSizeColumnsMode =
                 DataGridViewAutoSizeColumnsMode.Fill;
-
-            dgvThongKe.BackgroundColor = Color.White;
-
-            dgvThongKe.EnableHeadersVisualStyles = false;
-
-            dgvThongKe.ColumnHeadersDefaultCellStyle
-                .BackColor =
-                Color.FromArgb(230, 235, 242);
-
-            dgvThongKe.ColumnHeadersDefaultCellStyle
-                .Font =
-                new Font("Segoe UI", 10, FontStyle.Bold);
-
-            dgvThongKe.AlternatingRowsDefaultCellStyle
-                .BackColor = Color.AliceBlue;
-
-            dgvThongKe.RowTemplate.Height = 32;
-
-            dgvThongKe.ColumnHeadersHeight = 35;
         }
 
         private void NgayLoc_ValueChanged(
