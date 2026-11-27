@@ -150,9 +150,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database\01_TaoDatabase.sql" />
-    <Content Include="Database\02_TaoBang.sql" />
-    <Content Include="Database\03_DuLieuMau.sql" />
     <Content Include="Database\QuanLyNhaSach.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
