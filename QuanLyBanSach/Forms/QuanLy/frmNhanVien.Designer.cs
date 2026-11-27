@@ -132,6 +132,7 @@
             // 
             this.txtMaNV.Location = new System.Drawing.Point(175, 72);
             this.txtMaNV.Name = "txtMaNV";
+            this.txtMaNV.MaxLength = 20;
             this.txtMaNV.Size = new System.Drawing.Size(205, 26);
             this.txtMaNV.TabIndex = 7;
             // 
@@ -139,6 +140,7 @@
             // 
             this.txtSDT.Location = new System.Drawing.Point(175, 147);
             this.txtSDT.Name = "txtSDT";
+            this.txtSDT.MaxLength = 15;
             this.txtSDT.Size = new System.Drawing.Size(205, 26);
             this.txtSDT.TabIndex = 8;
             // 
@@ -146,6 +148,7 @@
             // 
             this.txtEmail.Location = new System.Drawing.Point(175, 221);
             this.txtEmail.Name = "txtEmail";
+            this.txtEmail.MaxLength = 100;
             this.txtEmail.Size = new System.Drawing.Size(205, 26);
             this.txtEmail.TabIndex = 9;
             // 
@@ -153,6 +156,7 @@
             // 
             this.txtTenNV.Location = new System.Drawing.Point(559, 71);
             this.txtTenNV.Name = "txtTenNV";
+            this.txtTenNV.MaxLength = 100;
             this.txtTenNV.Size = new System.Drawing.Size(201, 26);
             this.txtTenNV.TabIndex = 10;
             // 
@@ -160,6 +164,7 @@
             // 
             this.txtDiaChi.Location = new System.Drawing.Point(559, 143);
             this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.MaxLength = 200;
             this.txtDiaChi.Size = new System.Drawing.Size(201, 26);
             this.txtDiaChi.TabIndex = 11;
             // 
@@ -225,6 +230,7 @@
             // 
             this.txtTimKiem.Location = new System.Drawing.Point(175, 385);
             this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.MaxLength = 100;
             this.txtTimKiem.Size = new System.Drawing.Size(205, 26);
             this.txtTimKiem.TabIndex = 18;
             // 

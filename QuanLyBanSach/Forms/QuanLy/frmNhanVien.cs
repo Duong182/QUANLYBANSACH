@@ -24,13 +24,12 @@ namespace QuanLyBanSach.Forms.QuanLy
             cboChucVu.Items.Add("Nhân viên kho");
 
             cboChucVu.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            HienThiNhanVien();
         }
 
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
-
+            if (!DesignMode)
+                HienThiNhanVien();
         }
         private void HienThiNhanVien()
         {
@@ -147,7 +146,7 @@ namespace QuanLyBanSach.Forms.QuanLy
                 {
                     conn.Open();
 
-                    string sql = @"INSERT INTO NhanVien
+                    string sql = @"INSERT INTO dbo.NhanVien
                            (MaNV, TenNV, SDT, DiaChi, Email, ChucVu)
                            VALUES
                            (@MaNV, @TenNV, @SDT, @DiaChi, @Email, @ChucVu)";
@@ -216,7 +215,7 @@ namespace QuanLyBanSach.Forms.QuanLy
                 {
                     conn.Open();
 
-                    string sql = @"UPDATE NhanVien
+                    string sql = @"UPDATE dbo.NhanVien
                            SET TenNV = @TenNV,
                                SDT = @SDT,
                                DiaChi = @DiaChi,
@@ -278,7 +277,7 @@ namespace QuanLyBanSach.Forms.QuanLy
                     {
                         conn.Open();
 
-                        string sql = "DELETE FROM NhanVien WHERE MaNV = @MaNV";
+                        string sql = "DELETE FROM dbo.NhanVien WHERE MaNV = @MaNV";
 
                         SqlCommand cmd = new SqlCommand(sql, conn);
                         cmd.Parameters.AddWithValue("@MaNV", maNV);
@@ -334,7 +333,7 @@ namespace QuanLyBanSach.Forms.QuanLy
                 {
                     conn.Open();
 
-                    string sql = @"SELECT * FROM NhanVien
+                    string sql = @"SELECT * FROM dbo.NhanVien
                            WHERE MaNV LIKE @TuKhoa
                            OR TenNV LIKE @TuKhoa";
 
