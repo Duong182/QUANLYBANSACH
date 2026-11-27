@@ -21,8 +21,8 @@ namespace QuanLyBanSach.GUI.TrangChu
             InitializeComponent();
 
             mnuSach.Click += mnuSach_Click;
-            mnuLoaiSach.Click += (sender, e) => MoDanhMucSach(new frmTheLoai());
-            mnuTacGia.Click += (sender, e) => MoDanhMucSach(new frmTacGia());
+            mnuLoaiSach.Click += mnuLoaiSach_Click;
+            mnuTacGia.Click += mnuTacGia_Click;
             mnuThongKe.Click += mnuThongKe_Click;
             mnuThoat.Click += mnuThoat_Click;
 
@@ -244,9 +244,19 @@ namespace QuanLyBanSach.GUI.TrangChu
             }
         }
 
-        private void MoDanhMucSach(frmDanhMucSach form)
+        private void mnuLoaiSach_Click(object sender, EventArgs e)
         {
-            using (form)
+            using (frmTheLoai form = new frmTheLoai())
+            {
+                form.ShowDialog(this);
+                if (form.DaThayDoi)
+                    TaiDuLieu();
+            }
+        }
+
+        private void mnuTacGia_Click(object sender, EventArgs e)
+        {
+            using (frmTacGia form = new frmTacGia())
             {
                 form.ShowDialog(this);
                 if (form.DaThayDoi)

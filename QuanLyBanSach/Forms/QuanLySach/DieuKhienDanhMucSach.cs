@@ -2,14 +2,14 @@ using QuanLyBanSach.BLL;
 using QuanLyBanSach.DTO;
 using System;
 using System.Data;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace QuanLyBanSach.Forms.QuanLySach
 {
-    public class frmDanhMucSach : Form
+    internal sealed class DieuKhienDanhMucSach
     {
         private readonly SachBLL sachBLL = new SachBLL();
+        private readonly Form form;
         private readonly DanhMucSach danhMuc;
         private readonly string tenDanhMuc;
         private readonly DataGridView dgvDanhMuc;
@@ -22,47 +22,33 @@ namespace QuanLyBanSach.Forms.QuanLySach
         private int? maDangChon;
         private string tenDangChon;
 
-        internal frmDanhMucSach(DanhMucSach danhMuc, string tenDanhMuc, string tieuDe)
+        public DieuKhienDanhMucSach(Form form, DanhMucSach danhMuc, string tenDanhMuc,
+            DataGridView dgvDanhMuc, TextBox txtTimKiem, TextBox txtTen, Label lblTrangThai,
+            Button btnTim, Button btnTaiLai, Button btnNhapMoi, Button btnThem, Button btnSua, Button btnXoa)
         {
+            this.form = form;
             this.danhMuc = danhMuc;
             this.tenDanhMuc = tenDanhMuc;
-            SuspendLayout();
+            this.dgvDanhMuc = dgvDanhMuc;
+            this.txtTimKiem = txtTimKiem;
+            this.txtTen = txtTen;
+            this.lblTrangThai = lblTrangThai;
+            this.btnThem = btnThem;
+            this.btnSua = btnSua;
+            this.btnXoa = btnXoa;
 
-            TableLayoutPanel boCuc = GiaoDienQuanLySach.TaoBoCuc(this, "Quản lý " + tenDanhMuc,
-                new Size(710, 525), new Size(570, 430));
-            txtTimKiem = new TextBox { MaxLength = SachDTO.DoDaiTenDanhMucToiDa, Name = nameof(txtTimKiem) };
-            Button btnTim = GiaoDienQuanLySach.TaoNut("Tìm");
-            Button btnTaiLai = GiaoDienQuanLySach.TaoNut("Xem tất cả");
-            boCuc.Controls.Add(GiaoDienQuanLySach.TaoThanhTimKiem("Tìm " + tenDanhMuc,
-                txtTimKiem, btnTim, btnTaiLai), 0, 1);
-
-            dgvDanhMuc = GiaoDienQuanLySach.TaoBang();
-            dgvDanhMuc.Name = nameof(dgvDanhMuc);
-            var cotMa = GiaoDienQuanLySach.TaoCot("Ma", "Mã", 20, 70);
-            cotMa.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            cotMa.Width = 92;
-            dgvDanhMuc.Columns.AddRange(cotMa,
-                GiaoDienQuanLySach.TaoCot("Ten", tieuDe, 80, 220));
-            boCuc.Controls.Add(dgvDanhMuc, 0, 2);
-            lblTrangThai = GiaoDienQuanLySach.TaoTrangThai();
-            boCuc.Controls.Add(lblTrangThai, 0, 3);
-
-            TableLayoutPanel nhap = GiaoDienQuanLySach.TaoNhomNhap(1);
-            txtTen = new TextBox { MaxLength = SachDTO.DoDaiTenDanhMucToiDa, Name = nameof(txtTen) };
-            GiaoDienQuanLySach.ThemTruong(nhap, "Tên " + tenDanhMuc, txtTen, 0, 0);
-
-            Button btnNhapMoi = GiaoDienQuanLySach.TaoNut("Nhập mới");
-            btnThem = GiaoDienQuanLySach.TaoNut("Thêm");
-            btnSua = GiaoDienQuanLySach.TaoNut("Lưu sửa");
-            btnXoa = GiaoDienQuanLySach.TaoNut("Xóa");
-            GiaoDienQuanLySach.ThemNut(nhap, 2, btnNhapMoi, btnThem, btnSua, btnXoa);
-            boCuc.Controls.Add(nhap, 0, 4);
-
-            btnTim.Click += (sender, e) => GiaoDienQuanLySach.ThucHien(this, () => TaiDanhSach());
+            dgvDanhMuc.AutoGenerateColumns = false;
+            form.Load += (sender, e) =>
+            {
+                if (form.Site?.DesignMode != true)
+                    TaiDanhSachAnToan();
+            };
+            GiaoDienQuanLySach.GanTimKiemBangEnter(txtTimKiem, btnTim);
+            btnTim.Click += (sender, e) => TaiDanhSachAnToan();
             btnTaiLai.Click += (sender, e) =>
             {
                 txtTimKiem.Clear();
-                GiaoDienQuanLySach.ThucHien(this, () => TaiDanhSach());
+                TaiDanhSachAnToan();
             };
             btnNhapMoi.Click += (sender, e) =>
             {
@@ -73,17 +59,13 @@ namespace QuanLyBanSach.Forms.QuanLySach
             btnSua.Click += Sua_Click;
             btnXoa.Click += Xoa_Click;
             dgvDanhMuc.SelectionChanged += ChonMuc;
-            BoChonMuc();
-            ResumeLayout(false);
         }
 
-        internal bool DaThayDoi { get; private set; }
+        public bool DaThayDoi { get; private set; }
 
-        protected override void OnLoad(EventArgs e)
+        private void TaiDanhSachAnToan()
         {
-            base.OnLoad(e);
-            if (!DesignMode)
-                GiaoDienQuanLySach.ThucHien(this, () => TaiDanhSach());
+            GiaoDienQuanLySach.ThucHien(form, () => TaiDanhSach());
         }
 
         private void TaiDanhSach(string ketQua = "")
@@ -121,7 +103,7 @@ namespace QuanLyBanSach.Forms.QuanLySach
 
         private void Them_Click(object sender, EventArgs e)
         {
-            GiaoDienQuanLySach.ThucHien(this, () =>
+            GiaoDienQuanLySach.ThucHien(form, () =>
             {
                 sachBLL.ThemDanhMuc(danhMuc, txtTen.Text);
                 CapNhatSauKhiLuu("Đã thêm " + tenDanhMuc + ". ");
@@ -130,7 +112,7 @@ namespace QuanLyBanSach.Forms.QuanLySach
 
         private void Sua_Click(object sender, EventArgs e)
         {
-            GiaoDienQuanLySach.ThucHien(this, () =>
+            GiaoDienQuanLySach.ThucHien(form, () =>
             {
                 sachBLL.SuaDanhMuc(danhMuc, maDangChon.Value, txtTen.Text);
                 CapNhatSauKhiLuu("Đã lưu thay đổi. ");
@@ -139,12 +121,12 @@ namespace QuanLyBanSach.Forms.QuanLySach
 
         private void Xoa_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show(this, $"Xóa {tenDanhMuc} \"{tenDangChon}\"?",
+            if (MessageBox.Show(form, $"Xóa {tenDanhMuc} \"{tenDangChon}\"?",
                 "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2)
                 != DialogResult.Yes)
                 return;
 
-            GiaoDienQuanLySach.ThucHien(this, () =>
+            GiaoDienQuanLySach.ThucHien(form, () =>
             {
                 sachBLL.XoaDanhMuc(danhMuc, maDangChon.Value);
                 CapNhatSauKhiLuu("Đã xóa " + tenDanhMuc + ". ");

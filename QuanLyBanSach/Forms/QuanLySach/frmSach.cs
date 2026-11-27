@@ -16,6 +16,11 @@ namespace QuanLyBanSach.Forms.QuanLySach
         public frmSach()
         {
             InitializeComponent();
+            dgvSach.AutoGenerateColumns = false;
+            GiaoDienQuanLySach.GanTimKiemBangEnter(txtTimKiem, btnTim);
+            GiaBia.DefaultCellStyle.Format = "#,##0.##";
+            GiaBia.DefaultCellStyle.FormatProvider = VanHoaVietNam;
+            GiaBia.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             DonThongTin();
         }
 

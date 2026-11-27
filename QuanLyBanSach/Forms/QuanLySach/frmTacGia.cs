@@ -1,11 +1,20 @@
 using QuanLyBanSach.DTO;
+using System.Windows.Forms;
 
 namespace QuanLyBanSach.Forms.QuanLySach
 {
-    public class frmTacGia : frmDanhMucSach
+    public partial class frmTacGia : Form
     {
-        public frmTacGia() : base(DanhMucSach.TacGia, "tác giả", "Tác giả")
+        private readonly DieuKhienDanhMucSach dieuKhien;
+
+        public frmTacGia()
         {
+            InitializeComponent();
+            dieuKhien = new DieuKhienDanhMucSach(this, DanhMucSach.TacGia, "tác giả",
+                dgvDanhMuc, txtTimKiem, txtTen, lblTrangThai,
+                btnTim, btnTaiLai, btnNhapMoi, btnThem, btnSua, btnXoa);
         }
+
+        internal bool DaThayDoi => dieuKhien.DaThayDoi;
     }
 }

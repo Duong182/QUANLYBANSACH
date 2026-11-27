@@ -36,12 +36,8 @@
             this.mnuTaiKhoan = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuThoat = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSach = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuLinhVuc = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuLoaiSach = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTacGia = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuHoaDon = new System.Windows.Forms.ToolStripMenuItem();
-            this.mniKho = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuNhaXuatBan = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuThongKe = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlNguoiDung = new System.Windows.Forms.Panel();
             this.lblNgay = new System.Windows.Forms.Label();
@@ -73,12 +69,8 @@
             this.menuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuTaiKhoan,
             this.mnuSach,
-            this.mnuLinhVuc,
             this.mnuLoaiSach,
             this.mnuTacGia,
-            this.mnuHoaDon,
-            this.mniKho,
-            this.mnuNhaXuatBan,
             this.mnuThongKe});
             this.menuMain.Location = new System.Drawing.Point(0, 0);
             this.menuMain.Name = "menuMain";
@@ -111,13 +103,6 @@
             this.mnuSach.Size = new System.Drawing.Size(50, 19);
             this.mnuSach.Text = "Sách";
             // 
-            // mnuLinhVuc
-            // 
-            this.mnuLinhVuc.Padding = new System.Windows.Forms.Padding(8, 1, 8, 1);
-            this.mnuLinhVuc.Name = "mnuLinhVuc";
-            this.mnuLinhVuc.Size = new System.Drawing.Size(72, 19);
-            this.mnuLinhVuc.Text = "Lĩnh vực";
-            // 
             // mnuLoaiSach
             // 
             this.mnuLoaiSach.Padding = new System.Windows.Forms.Padding(8, 1, 8, 1);
@@ -131,27 +116,6 @@
             this.mnuTacGia.Name = "mnuTacGia";
             this.mnuTacGia.Size = new System.Drawing.Size(63, 19);
             this.mnuTacGia.Text = "Tác giả";
-            // 
-            // mnuHoaDon
-            // 
-            this.mnuHoaDon.Padding = new System.Windows.Forms.Padding(8, 1, 8, 1);
-            this.mnuHoaDon.Name = "mnuHoaDon";
-            this.mnuHoaDon.Size = new System.Drawing.Size(77, 19);
-            this.mnuHoaDon.Text = "Hóa đơn";
-            // 
-            // mniKho
-            // 
-            this.mniKho.Padding = new System.Windows.Forms.Padding(8, 1, 8, 1);
-            this.mniKho.Name = "mniKho";
-            this.mniKho.Size = new System.Drawing.Size(44, 19);
-            this.mniKho.Text = "Kho";
-            // 
-            // mnuNhaXuatBan
-            // 
-            this.mnuNhaXuatBan.Padding = new System.Windows.Forms.Padding(8, 1, 8, 1);
-            this.mnuNhaXuatBan.Name = "mnuNhaXuatBan";
-            this.mnuNhaXuatBan.Size = new System.Drawing.Size(104, 19);
-            this.mnuNhaXuatBan.Text = "Nhà xuất bản";
             // 
             // mnuThongKe
             // 
@@ -386,12 +350,8 @@
         private System.Windows.Forms.ToolStripMenuItem mnuTaiKhoan;
         private System.Windows.Forms.ToolStripMenuItem mnuThoat;
         private System.Windows.Forms.ToolStripMenuItem mnuSach;
-        private System.Windows.Forms.ToolStripMenuItem mnuLinhVuc;
         private System.Windows.Forms.ToolStripMenuItem mnuLoaiSach;
         private System.Windows.Forms.ToolStripMenuItem mnuTacGia;
-        private System.Windows.Forms.ToolStripMenuItem mnuHoaDon;
-        private System.Windows.Forms.ToolStripMenuItem mniKho;
-        private System.Windows.Forms.ToolStripMenuItem mnuNhaXuatBan;
         private System.Windows.Forms.ToolStripMenuItem mnuThongKe;
         private System.Windows.Forms.Panel pnlNguoiDung;
         private System.Windows.Forms.Label lblNguoiDung;
