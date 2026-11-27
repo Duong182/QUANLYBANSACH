@@ -1,16 +1,17 @@
-﻿using QuanLyBanSach.Forms.ThongKe;
-using QuanLyNhaSach;
+﻿using QuanLyBanSach.Forms.QuanLy;
 using QuanLyBanSach.Forms.QuanLySach;
+using QuanLyBanSach.Forms.ThongKe;
+using QuanLyNhaSach;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace QuanLyBanSach.GUI.TrangChu
 {
@@ -287,6 +288,18 @@ namespace QuanLyBanSach.GUI.TrangChu
         private void lblSoLuongKhach_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void mnuNhanVien_Click(object sender, EventArgs e)
+        {
+            frmNhanVien frm = new frmNhanVien();
+            frm.ShowDialog();
+        }
+
+        private void mnuKhachHang_Click(object sender, EventArgs e)
+        {
+            frmKhachHang frm = new frmKhachHang();
+            frm.ShowDialog();
         }
     }
 }
